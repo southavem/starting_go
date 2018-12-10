@@ -11,6 +11,5 @@ func returnFunc() func() {
 }
 
 func main() {
-    f := returnFunc()
-    f()
+    returnFunc()()
 }
