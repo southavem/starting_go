@@ -24,6 +24,10 @@ func (c *Car) ToString() string {
     return fmt.Sprintf("[%s] %s", c.Number, c.Model)
 }
 
+func Println(s Stringify) {
+    fmt.Println(s.ToString())
+}
+
 func main() {
     vs := []Stringify{
         &Person{Name: "Taro", Age: 21},
@@ -32,4 +36,7 @@ func main() {
     for _, v := range vs {
         fmt.Println(v.ToString())
     }
+
+    Println(&Person{Name: "Hanako", Age: 23})
+    Println(&Car{Number: "XXX-9999", Model: "RT-38"})
 }
